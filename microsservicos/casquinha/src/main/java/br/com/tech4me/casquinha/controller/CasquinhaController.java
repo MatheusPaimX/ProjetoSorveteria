@@ -57,7 +57,7 @@ public class CasquinhaController{
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CasquinhaDto> atualizarCasquinha(@PathVariable String id, @Valid CasquinhaDto casquinha){
+    public ResponseEntity<CasquinhaDto> atualizarCasquinha(@PathVariable String id, @RequestBody @Valid CasquinhaDto casquinha){
         Optional<CasquinhaDto> retorno = servico.atualizarCasquinhaPorId(id, casquinha);
 
         if(retorno.isPresent()){
